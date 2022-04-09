@@ -1,0 +1,36 @@
+﻿@model flights.Entity.airplane
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>airplane</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalSeat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalSeat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModelNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModelNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlightNumberNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlightNumberNavigation.From)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="update" asp-route-id="@Model.RegisterationNumber">Edit</a> |
+    <a asp-action="DeatailsTableAirplane">Back to List</a>
+</div>

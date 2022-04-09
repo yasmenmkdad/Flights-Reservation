@@ -1,0 +1,165 @@
+﻿@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+}
+@{
+ViewData["Title"] = "Booking";
+}
+@model IEnumerable<flights.Entity.flight>
+@section files{
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>	
+		
+	<!-- For Testimonials slider -->
+	<!-- //For Testimonials slider -->
+	<!-- //custom-theme files-->
+	<link href="~/cssflight/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="~/cssflight/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //custom-theme files-->
+	<!-- font-awesome-icons -->
+	<link href="~/cssflight/font-awesome.css" rel="stylesheet"> 
+	<!-- //font-awesome-icons -->
+	<!-- googlefonts -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+	<!-- //googlefonts -->
+	<link rel="stylesheet" href="~/cssflight/jquery-ui.css" />
+	<link href="~/cssflight/bookingstyle.css" rel="stylesheet" type="text/css" media="all"/>
+}
+<div class="banner1">
+	
+</div>
+<!-- main-section -->
+	<div class="head agile">
+	<div class="wthree_head_section">
+				<h3 class="w3l_header">Booking <span>Form</span></h3>
+			</div>
+		<div class="login w3">
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+@*					<ul class="resp-tabs-list">
+						<li class="resp-tab-item"></li>
+					</ul>*@				  	 
+							<div class="login-top agileinfo">
+								
+								
+								<form action="ConfirmBooking" method="post">
+                                  <div class="form-row">
+                                  <div class="form-group col-md-6">
+								        <label for="from">From*</label>
+												<select id="from" name="from" required="" class="form-control">
+													@foreach (var item in Model) {
+                                                       <option>
+                                                      @Html.DisplayFor(modelItem => item.From)
+													  </option>
+													}
+												</select>
+								  </div>
+										
+								<div class="form-group col-md-6">
+									 <label for="to">To*</label>
+										<select id="to" name="to" required="" class="form-control">
+														@foreach (var item in Model) {
+														   <option>
+														  @Html.DisplayFor(modelItem => item.To)
+														  </option>
+														}
+										</select>
+								</div>
+										
+								<div class="form-group col-md-4">
+											<label for="DepartureTime">DepartureTime*</label>
+											
+											 <input type="date" id="DepartureTime" name="DepartureTime" class="form-control">
+											
+								</div>	
+										
+								<div class="form-group col-md-4">
+										    <label for="ArrivalTime">ArrivalTime*</label>
+											
+											 <input type="date" id="ArrivalTime" name="ArrivalTime" class="form-control">
+											
+								</div>
+							   <div class="form-group col-md-4">
+								    <label for="NoOfSeats">Number Of Seats*</label>
+											
+									<input type="number" id="NoOfSeats" name="NoOfSeats" class="form-control" />
+											
+								</div>
+										
+															
+									
+								<div class="clearfix"></div>
+								<div class="aitssubmitw3ls">
+								<button style="margin-left:12px;background:rgb(237, 28, 36);border-color:rgb(237, 28, 36);font-size:20px;width:80px;color:white"class=" btn-lg btn-primary">Book</button>
+								</div>
+									</div>		
+										
+								</form>
+								
+							</div>
+				</div>
+		</div>	
+		<div class="clear"></div>
+	</div>	
+<!-- //main-section -->
+@section scripts{
+	<!-- js -->
+	<script type="text/javascript" src="~/jsflight/jquery-2.1.4.min.js"></script>
+	<!-- for bootstrap working -->
+	<script src="~/jsflight/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+<!-- //js -->
+<!-- //here starts scrolling icon -->
+<script src="~/jsflight/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="~/jsflight/move-top.js"></script>
+	<script type="text/javascript" src="~/jsflight/easing.js"></script>
+	<!-- here stars scrolling script -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling script -->
+<!-- //here ends scrolling icon -->
+                                  
+
+<!-- scrolling script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!-- //scrolling script -->
+<!-- //Calendar -->
+											<script src="~/jsflight/jquery-ui.js"></script>
+											  <script>
+													  $(function() {
+														$( "#datepicker,#datepicker1" ).datepicker();
+													  });
+											  </script>
+								<!-- //Calendar -->
+<!--script-->
+<script src="~/jsflight/easyResponsiveTabs.js" type="text/javascript"></script>
+		    <script type="text/javascript">
+			    $(document).ready(function () {
+			        $('#horizontalTab').easyResponsiveTabs({
+			            type: 'default', //Types: default, vertical, accordion           
+			            width: 'auto', //auto or any width like 600px
+			            fit: true   // 100% fit in a container
+			        });
+			    });
+				
+</script>	
+}

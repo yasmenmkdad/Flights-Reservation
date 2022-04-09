@@ -1,0 +1,75 @@
+﻿@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+}
+
+@model flights.Entity.flight;
+@{
+    ViewData["Title"] = "ConfirmBooking";
+    var ticket = ViewBag.Ticket;
+    var NoOfSeats = ViewBag.NoOfSeats;
+    var TotalPrice = NoOfSeats * Model.Price;
+}
+
+<h5>ConfirmBooking</h5><br /><br />
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+
+        <thead>
+            <tr>
+                <th>FlightNumber</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>NumberOfSeats</th>
+                <th>Total Price</th>
+                <th>Confirm Booking</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        @{
+            if (Model != null)
+            {
+              
+                        <tr>
+                            <td>@Model.FlightNumber</td>
+                            <td>@Model.From</td>
+                            <td>@Model.To</td>
+                            <td>@Model.DepartureTime</td>
+                            <td>@Model.ArrivalTime</td>
+                            <td>@NoOfSeats</td>
+                            <td>@TotalPrice </td>
+                            <td>
+                                
+                             <div >
+                                    <form action="/Flights/Payment/Processing/?fn=@ViewBag.flightnum&noOfSeats=@NoOfSeats" method="POST">
+                                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+                                    data-key="pk_test_51Kkcs8EpWjtsLV5S97ILTcnPce6aeBHGggjzeZ4bvBA8AzMC4DNVf7jS9Kb4jw3a2QyKa6cTnEnt2svOAX8MRZE900GaT0xoVq"
+                                    data-amount="@ViewBag.PaymentAmount"
+                                    data-name="[Flight Booking]"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                    data-locale="en"
+                                    data-zip-code="true"
+                                    data-label="Confirm">
+                                   
+                                    </script>
+                                    </form>
+                               </div>
+
+                            <div class="clearfix"></div>
+                            <div class="aitssubmitw3ls">
+                         
+                            </div>
+
+                            </td>
+                               
+                            
+                            
+
+                        </tr>
+                }
+            }
+      
+        </tbody>
+    
+    </table>

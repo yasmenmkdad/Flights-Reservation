@@ -1,0 +1,116 @@
+﻿@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+
+}
+@using flights.Entity
+@section files{
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>	
+<!-- //custom-theme files-->
+<link href="~/cssflight/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/cssflight/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //custom-theme files-->
+<link href="~/cssflight/simpleLightbox.css" rel="stylesheet" type="text/css" />
+<!-- font-awesome-icons -->
+<link href="~/cssflight/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<!-- googlefonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+}
+
+
+<!-- gallery -->
+	<div class="banner-bottom gallery">
+		<div class="container">
+		<div class="wthree_head_section">
+				<h2 class="w3l_header">Our <span>Gallery</span></h2>
+				<p>A travel agency is a private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities.</p>
+			</div>
+			<div class="w3ls_gallery_grids">
+					
+				@{
+					List<country> countries = ViewBag.countries;
+
+					for(int i = 0;i<countries.Count;i++)
+					{
+							<div class="col-md-4 w3_agile_gallery_grid">
+							@{int j = i;}
+						  	@for(; i < countries.Count && (j+(countries.Count/3) > i) ; i++)
+							{
+								<div class="agile_gallery_grid">
+									<a title=@countries[i].Name 
+									href="data:image/bmp;base64, @(Convert.ToBase64String(@countries[i].Image))" >
+										<div class="agile_gallery_grid1">
+											<img src="data:image/bmp;base64, @(Convert.ToBase64String(@countries[i].Image))" 
+												alt="" width = "200" height="240"/>
+											<div class="w3layouts_gallery_grid1_pos">
+												<h3>@countries[i].Name</h3>
+											</div>
+										</div>
+									</a>
+								</div>
+							}
+							@{
+								if (i < countries.Count )
+									i--;
+							}
+							</div>
+						}
+					
+				}
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+<!-- //gallery -->
+
+
+
+@section scripts{
+	<script type="text/javascript" src="~/jsflight/jquery-2.1.4.min.js"></script>
+	<!-- for bootstrap working -->
+	<script src="~/jsflight/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+<!-- //js -->
+<!-- //here starts scrolling icon -->
+<script src="~/jsflight/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="~/jsflight/move-top.js"></script>
+	<script type="text/javascript" src="~/jsflight/easing.js"></script>
+	<!-- here stars scrolling script -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling script -->
+<!-- //here ends scrolling icon -->
+
+<!-- scrolling script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!-- //scrolling script -->
+<!-- simpleLightbox -->
+		<script src="~/jsflight/simpleLightbox.js"></script>	<script>
+		$('.w3_agile_gallery_grid a').simpleLightbox();
+	</script>
+
+}
+

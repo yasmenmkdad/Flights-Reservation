@@ -1,0 +1,134 @@
+﻿@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+
+}
+
+@section files{
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>	
+<!-- //custom-theme files-->
+<link href="~/cssflight/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/cssflight/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //custom-theme files-->
+
+<!-- font-awesome-icons -->
+<link href="~/cssflight/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<!-- googlefonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+}
+<!-- contact -->
+<section class="contact-w3ls">
+	<div class="container">
+		<div class="wthree_head_section">
+				<h2 class="w3l_header">Contact <span>Us</span></h2>
+				<p>A travel agency is a private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities.</p>
+			</div>
+		<div class="con-top">
+		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile2" data-aos="flip-left">
+			<div class="contact-agileits">
+				<h4>Get In Touch</h4>
+				 <script type="text/javascript">
+						function beforeSubmit() {
+							var FormContact = document.getElementById("FormContact");
+							var name = document.getElementById("name");
+							var phone = document.getElementById("phone");
+							var Body =  `I am ${name.value} %0D%0A My phone is ${phone.value}%0D%0A I send this mail for`
+							FormContact.action=`mailto:flightBooking@gmail.com?subject=Support Mail&body=${Body} `;
+							
+						}
+				</script>
+				<form id="FormContact" @*action="mailto:flightBooking@gmail.com?subject=Testing out mailto!&body=This is only a test!"*@ onsubmit="beforeSubmit()" method="post">
+					<div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Full Name:</label> 
+                            <input type="text" class="form-control" name="name" id="name" Placeholder=" " required="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>	
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Phone Number:</label>
+                            <input type="tel" class="form-control" name="phone" id="phone" Placeholder=" " required="">
+							<p class="help-block"></p>
+						</div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Email Address:</label>
+                            <input type="email" class="form-control" name="email" id="email" Placeholder=" " required="">
+							<p class="help-block"></p>
+						</div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Send</button>	
+				</form>            
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile1" data-aos="flip-right">
+			<h4 class="w3l-contact">Connect With Us</h4>
+			<p class="contact-agile1"><strong>Phone :</strong> +021 365 777</p>
+			<p class="contact-agile1"><strong>Email :</strong> <a href="mailto:flightBooking@gmail.com">flightBooking@gmail.com</a></p>
+			<p class="contact-agile1"><strong>Address :</strong> 132 Naser City, Cairo.</p>											
+			
+							<ul class="agileits_social_list">
+								<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+							</ul>
+						
+		</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<!-- map -->
+@*<div class="w3l-map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10446319.224363243!2d-101.53641366492933!3d40.52127641868563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1509778660321" style="border:0" allowfullscreen></iframe>
+</div>*@
+
+<!-- //contact -->
+
+@section scripts{
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+<!-- //js -->
+<!-- //here starts scrolling icon -->
+<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling script -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling script -->
+<!-- //here ends scrolling icon -->
+
+<!-- scrolling script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+}

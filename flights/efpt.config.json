@@ -1,0 +1,91 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "FlightsystemdbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Context",
+   "OutputPath": "Entity",
+   "ProjectRootNamespace": "flights",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[airlines]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[airplanes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetRoleClaims]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserClaims]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserLogins]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUsers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserTokens]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[countries]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[flights]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProjectRole]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tickets]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[visitors]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "REEM.FlightSystemDB",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

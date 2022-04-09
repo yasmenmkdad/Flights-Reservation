@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+
+
+
+@using Microsoft.AspNetCore.Identity
+@using flights.Areas.Identity.Data
+
+@inject SignInManager<flightsUser> SignInManager
+@inject UserManager<flightsUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="~/images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css" integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="~/css/style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="~/css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="~/css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="~/css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="~/css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="~/css/custom.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" />
+       <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/flights.styles.css" asp-append-version="true" />
+
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="~/Admin/Home/Index2"><img class="logo_icon img-responsive" src="~/images/person.png" alt="#" /></a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="~/images/person.png" alt="#" /></div>
+                        <div class="user_info">
+                           @{if(@UserManager.GetUserName(User)!=null){
+                            <h6>  @UserManager.GetUserName(User).Split("@")[0]</h6>
+                           }
+                        }
+                           
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+
+                     <li><a href="~/Admin/Home/Index2"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+
+
+
+
+
+                     <li><a href="~/Admin/Home/tables"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+
+                     <li><a href="~/Admin/Home/create"><i class="fa fa-table purple_color2"></i> <span>create Admin</span></a></li>
+
+
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="~/images/person.png" alt="#" /><span class="name_user">@UserManager.GetUserName(User)</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="~/Flights/flight/show">Go to site</a>
+                                     
+                                     
+                                       <form id="logoutForm" class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("show", "flight", new { area = "Flights" })">
+            <button style="padding:0px;" id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                @RenderBody()
+                </div>
+                </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+
+      <script src="~/js/min/allscripts.js"></script>
+      <script src="https://use.fontawesome.com/b689e2c087.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+         $(document).ready(function() {
+    $('#example').DataTable();
+} );
+      </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+   </body>
+</html>
+
+
+

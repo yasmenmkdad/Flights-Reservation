@@ -1,0 +1,128 @@
+﻿@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+}
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+@using flights.Entity;
+@section files{
+}
+
+<div class="container">
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                            
+                       <form id="SearchForm" asp-route-returnUrl="~/Flights/Flight/Search" method="post">
+                       
+                        <br />
+                        <br />
+                        <div style="display: flex;width:60%; margin-left:20%;margin-right:20%;">
+                            <label style="margin-right:10px">From </label>
+                            <select name="FromCountry" class="form-control" asp-items=@ViewBag.countries>
+                                <option hidden selected></option>    
+                            </select>
+                            <label style=" margin-left:20%; margin-right:10px">To </label>
+                            <select name="ToCountry" class="form-control" asp-items=@ViewBag.countries form="SearchForm" style="margin-right:10%"> 
+                                <option hidden selected></option>    
+                            </select>
+                        </div>
+                        <br />
+                        <br />
+                        <div style="display: flex;width:60%; margin-left:15%;margin-right:20%;">
+                            <label style="margin-right:10px">DepartureTime </label>
+                            <input type="date" id="DepartureTime" name="DepartureTime" style="width:400px">
+
+                            <label style=" margin-left:100px; margin-right:10px">ArrivalTime </label>
+                            <input type="date" id="ArrivalTime" name="ArrivalTime" style="width:400px">
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div style="display: flex;width:50%; margin-left:20%;margin-right:20%;">
+                        <input type="checkbox" id="AvailableSeats" name="AvailableSeats" value="True">
+                        <label> AvailableSeat</label><br>
+                        </div>
+
+                        <div style="margin-left:80%;margin-right:0%;" >
+                            <input id="SearchButton" style="background:rgb(237, 28, 36);border-color:rgb(237, 28, 36)" type="submit" class=" btn-lg btn-primary" value="Search"/>
+                        @*<button id="SearchButton" style="background:rgb(237, 28, 36);border-color:rgb(237, 28, 36)" type="submit" class=" btn-lg btn-primary">Search</button>*@
+                        </div>
+
+                        </form>
+
+                    <br />
+                    <br />
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+                 <div class="row column1">
+                <div class="col-md-12">
+                    <div class="white_shd full margin_bottom_30">
+                        @*<div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2> Tables</h2>
+                            </div>
+                        </div>*@
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
+
+        <thead>
+            <tr>
+                <th>FlightNumber</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>AvailableSeat</th>
+                <th>Price</th>
+
+                <th>Booking</th>
+
+            </tr>
+        </thead>
+        
+        <tbody>
+        @{
+            if (@ViewBag.trips != null)
+            {
+                List<flight> trips = ViewBag.trips;
+
+                @for(int i =0; i<trips.Count;i++)
+                {
+                        <tr>
+                            <td>@trips[i].FlightNumber</td>
+                            <td>@trips[i].From</td>
+                            <td>@trips[i].To</td>
+                            <td>@trips[i].DepartureTime</td>
+                            <td>@trips[i].ArrivalTime</td>
+                            <td>@trips[i].AvailableSeat</td>
+                            <td>@trips[i].Price</td>
+                            <td>
+                            @{
+                                if (@trips[i].AvailableSeat > 0)
+                                {
+                                    <a href="~/Flights/flight/Booking">
+                                        <button style="background:rgb(237, 28, 36);border-color:rgb(237, 28, 36);font-size:12px" class=" btn-lg btn-primary">Book Now</button>
+                                    </a>
+                                }
+                             }
+                             </td>
+
+                        </tr>
+                }
+            }
+        }
+        </tbody>
+    
+    </table>
+    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+</div>
+    <!-- end dashboard inner -->

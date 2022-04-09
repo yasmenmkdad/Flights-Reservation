@@ -1,0 +1,99 @@
+﻿@model IEnumerable<flights.Entity.airline>
+@{
+    Layout = "~/Areas/Admin/Views/shared/_LayoutAdmin.cshtml";
+
+}
+
+    
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2> Tables</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+               <div class="row column1">
+                <div class="col-md-12">
+                    <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2> Air Line</h2>
+                            </div>
+                        </div>
+
+                          <div class="full graph_head">
+                                <a href="Create"><i class="fa-solid fa-circle-plus fa-3x green_color"></i>
+                                    
+                              <span class="text-success"> Create</span>
+                                
+                                </a>
+                            </div>
+        <div class="container-fluid">
+
+
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Registration Number</th>
+              
+               
+                <th>operation</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model){
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.RegisterationNumber</td>
+               
+                
+                <td>
+                      <a href="Details/?id=@item.Id"><i class="fa-solid fa-3x fa-display mr-3  yellow_color"></i></a>
+
+                    <a href="update/?id=@item.Id"><i class="fa-solid fa-3x fa-pen-to-square mr-3"></i></a>
+
+                    <a href="Delete/?id=@item.Id"><i class="fa-solid fa-3x fa-trash-can mr-3  red_color"></i></a>
+
+
+
+                </td>
+
+
+            </tr>
+         
+         
+         }
+           
+          
+        </tbody>
+    
+    </table>
+     <a href="~/Admin/Home/tables" >Back to List</a>
+
+
+    </div>
+   
+            <!-- end row -->
+        
+        <!-- footer -->
+        <div class="container-fluid">
+            <div class="footer">
+                <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
+            </div>
+        </div>
+    
+    <!-- end dashboard inner -->
+  
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

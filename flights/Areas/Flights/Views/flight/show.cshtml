@@ -1,0 +1,319 @@
+﻿@model IEnumerable< flights.Entity.flight>
+@using flights.Context;
+@{
+	Layout = "~/Areas/Flights/Views/Shared/_LayoutFlight.cshtml";
+}
+
+<!-- //Top-Bar -->
+<!-- w3-banner -->
+<div class="banner">
+	<div class="banner-dott1">
+		<div class="w3-banner">
+
+			<div  class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-text">
+
+							<h3>Enjoy Your Dream Vacation</h3>
+							<p>try a new pleasant travel experience.<br /> Please check the country-specific entry requirements of the country you are planning to travel to.</p>
+							@*<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">View Details</a>*@
+						</div>
+					</li>
+					<li>
+						<div class="banner-text">
+
+							<h3>Find Travel Perfection</h3>
+							<p>Discover best fare deals on selected routes,
+								special prices give you the chance to enjoy flying in your leisure, shopping or Business trip. </p>
+							@*<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">View Details</a>*@
+						</div>
+					</li>
+					<li>
+						<div class="banner-text">
+
+							<h3>Safe Way To Travel</h3>
+							<p>​​Your Safety has always been our highest priority.
+								We continue to ensure that our safety and hygiene measures are of the highest standard, find out about the COVID-19 measures we are taking to protect you at every step of your journey.
+							</p>
+							@*<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">View Details</a>*@
+						</div>
+					</li>
+				</ul>
+			</div>	
+
+		</div>
+
+		<!-- //w3-banner -->
+	</div>
+</div>
+<!-- //banner -->
+<!-- advantages -->
+<div class="two-grids">
+	<div class="container">
+		<div class="wthree_head_section">
+			<h3 class="w3l_header">Welcome to <span> our Flights</span></h3>
+			<p>Book your flight tickets on our site for best Offers/Discounts & Upgrade your ticket with FlightBoooking. Book With FlightBoooking And Enjoy The Sky.</p>
+		</div>
+		<div class="col-md-6 w3_two_grid_right">
+			<div class="w3_two_grid_right1">
+				
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">	
+						<i class="fa fa-plane" aria-hidden="true"></i>
+
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Transportation</h4>
+					<p>We keen for comfort our customers</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_two_grid_right1">
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">
+						<i class="fa fa-tags" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Offers</h4>
+					<p>All time we applay offer for our customers</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_two_grid_right1">
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Many sponser</h4>
+					<p>We have many sponser for many services for our customers</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="col-md-6 w3_two_grid_right">
+			<div class="w3_two_grid_right1">
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Easy Trip Planning</h4>
+					<p>You can book you ticket in any time.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_two_grid_right1">
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">
+						<i class="fa fa-building" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Suitable Price</h4>
+					<p>You got less price for good services</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_two_grid_right1">
+				<div class="col-xs-3 w3_two_grid_right_grid">
+					<div class="w3_two_grid_right_grid1">
+						<i class="fa fa-credit-card" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="col-xs-9 w3_two_grid_right_gridr">
+					<h4>Online Payment</h4>
+					<p>You can pay from any where for save your time</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+<!-- //advantages -->
+
+<!-- banner-bottom -->
+<div class="banner-bottom mid-section-agileits">
+	<div class="col-md-7 bannerbottomleft">
+
+	</div>
+	<div class="col-md-5 bannerbottomright">
+		<h3>Why We’re the Best </h3>
+		<p>We're always trying to lock in the lowest price for airline tickets and best services.</p>
+		<h4><i class="fa fa-video-camera" aria-hidden="true"></i>Movies: 20</h4>
+		<h4><i class="fa fa-wifi" aria-hidden="true"></i>wifi: Available</h4>
+		<h4><i class="fa  fa-wheelchair" aria-hidden="true"></i>WheelChair: Available</h4>
+		<h4><i class="fa fa-glass" aria-hidden="true"></i>Drink: No Alcohol</h4>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<!-- //banner-bottom -->
+<!-- pricing -->
+<div class="w3ls-section wthree-pricing" id="pricing">	
+	<div class="container">
+		<div class="wthree_head_section">
+			<h3 class="w3l_header">Tour <span>Recommendation</span></h3>
+			<p>A travel agency is a private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities.</p>
+		</div>
+		<div class="pricing-grids-info">
+			@{
+				var Trips = new []{
+					ViewBag.Country1
+					,ViewBag.Country2,ViewBag.Country3,ViewBag.Country4}.ToList();
+				var i = 1;
+				foreach (var item in Model)
+				{
+					if (i <= 8)
+					{
+						DateTime drpTime = item.DepartureTime;
+						DateTime ArrTime = item.ArrivalTime;
+						TimeSpan FlightTime = ArrTime.Subtract(drpTime);
+						FlightsystemdbContext context1 = new FlightsystemdbContext();
+						var country = context1.countries.Where(w => w.Name == item.To).FirstOrDefault();
+						<div class="pricing-grid grid-one" style="margin-left:20px">
+
+							<div class="w3ls-top">
+								<img src="data:image/bmp;base64, @(Convert.ToBase64String(country.Image))" 
+							alt="" width = "200" height="200"/>
+							</div>
+
+							<div class="w3ls-bottom">
+								<ul class="count">
+									<h3>@item.To</h3>
+									<li>@item.From</li>
+									<li>@item.DepartureTime.ToString("dd/MM/yyyy")</li>
+									<li>@FlightTime.TotalHours Hours</li>
+								</ul>
+								@*<h4> 900<span class="sup">$</span> </h4>*@
+								<div class="more">
+									<a href="~/Flights/Flight/Booking">Book Now</a>				
+								</div>
+							</div>
+
+						</div>
+						i++;
+					}
+				}
+			}
+
+			<div class="clearfix"> </div> 
+				<!--End-slider-script-->
+			</div>
+		</div>	
+	</div>	
+	<!--//pricing-->
+
+	<!-- counter -->
+	<div class="services-bottom stats services">
+	<div class="banner-dott1">
+		<div class="container">
+		
+		  <div class="wthree-agile-counter">
+		  <div class="col-md-3 w3_agile_stats_grid-top">
+			<div class="w3_agile_stats_grid">
+				<div class="agile_count_grid_left">
+					<span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+				</div>
+				<div class="agile_count_grid_right">
+					<p class="counter">2324</p> 
+				</div>
+				<div class="clearfix"> </div>
+				<h4>Flights</h4>
+			</div>
+		</div>
+		<div class="col-md-3 w3_agile_stats_grid-top">
+			<div class="w3_agile_stats_grid">
+				<div class="agile_count_grid_left">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				</div>
+				<div class="agile_count_grid_right">
+					<p class="counter">1943</p> 
+				</div>
+				<div class="clearfix"> </div>
+				<h4>Happy Clients</h4>
+			</div>
+		</div>
+		<div class="col-md-3 w3_agile_stats_grid-top">
+			<div class="w3_agile_stats_grid">
+				<div class="agile_count_grid_left">
+					<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+				</div>
+				<div class="agile_count_grid_right">
+					<p class="counter">1434</p> 
+				</div>
+				<div class="clearfix"> </div>
+				<h4>People Loved</h4>
+			</div>
+		</div>
+		<div class="col-md-3 w3_agile_stats_grid-top">
+			<div class="w3_agile_stats_grid">
+				<div class="agile_count_grid_left">
+					<span class="fa fa-trophy" aria-hidden="true"></span>
+				</div>
+				<div class="agile_count_grid_right">
+					<p class="counter">234</p> 
+				</div>
+				<div class="clearfix"> </div>
+				<h4>Win Awards</h4>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+</div>
+<!-- //counter -->
+
+
+<!-- Clients -->
+<div class="clients">
+<div class="container">
+	<div class="wthree_head_section">
+				<h3 class="w3l_header">What People  <span>Say</span></h3>
+				<p>Flight Booking is a public service that provides travel with many services.</p>
+			</div>
+		
+			
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<img src="~/imageflight/c1.jpg" alt="" />
+								<p>Good value for money, great flight times, friendly staff. Business-class on the Dreamliner is great/modern and able to compete with larger airlines. Comfortable seats and nice selection in entertainment system Drinks section is a bit limited (and no alcohol) .</p>
+								<div class="client">
+									<h5>Gerald Roy</h5>
+								</div>
+						</li>
+						<li>
+							<img src="~/imageflight/c2.jpg" alt="" />
+								<p>| Flown last month between Cairo and Dubai. The aircraft was clean and tidy, we had dinner at the airport lounge so didn't have meals, only nonalcoholic beverages are available on Egyptair. IFE was ok, surprised to see 3-4 Hindi movies too. Overall decent experience.</p>
+								<div class="client">
+									<h5>Adam Brandom</h5>
+								</div>
+						</li>
+						<li>
+							<img src="~/imageflight/c3.jpg" alt="" />
+								<p> I was booked to fly from London to Douala via Cairo and EgyptAir did an excellent job to contact me fours days before my flight to inform me the flight was cancelled. I was directed to get to the ticketing agent to initiate a process to get a refund.</p>
+								<div class="client">
+									<h5>Steve Artur</h5>
+								</div>
+						</li>
+						<li>
+							<img src="~/imageflight/c4.jpg" alt="" />
+								<p>The crew were very professional and friendly, wish to fly with such crew every time.</p>
+								<div class="client">
+									<h5>Martin Victor</h5>
+								</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+</div>
+<!-- //Clients -->

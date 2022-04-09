@@ -1,0 +1,104 @@
+﻿@page
+@using flights.Areas.Identity.Data
+@using static flights.Areas.Admin.Controllers.HomeController
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model InputModel
+@{
+  //  ViewData["Title"] = "Register";
+    //var item = Model;
+ Layout = "~/Areas/Admin/Views/shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create</h1>
+
+<form action="create" method="Post">
+      @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User Name</label>
+    @*<input type="text" name ="User_Name" class="form-control" id="username" >*@
+    @Html.EditorFor(m=>m.User_Name, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.User_Name, "", new { @class = "text-danger" })
+
+
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    @*<input type="text" name ="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">*@
+    @Html.EditorFor(m=>m.Email, new { htmlAttributes = new { @class = "form-control" } })
+    
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+ <span class="text-danger">@ViewBag.emailexist</span>
+</div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">card number</label>
+    @*<input type="text"  name ="card_number" class="form-control" id="exampleInputPassword1">*@
+    @Html.EditorFor(m=>m.card_number, new { htmlAttributes = new { @class = "form-control" } })
+       
+    @Html.ValidationMessageFor(model => model.card_number, "", new { @class = "text-danger" })
+ 
+</div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">phone</label>
+    @*<input type="text" name="phone"  class="form-control" id="exampleInputPassword1">*@
+    @Html.EditorFor(m=>m.phone, new { htmlAttributes = new { @class = "form-control" } })
+        
+    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+  
+</div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Address</label>
+    @*<input type="text" name="Address" class="form-control" id="exampleInputPassword1">*@
+    @Html.EditorFor(m=>m.Address, new { htmlAttributes = new { @class = "form-control" } })
+       
+    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+ 
+</div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Age</label>
+    @*<input type="number" name="age" class="form-control" id="exampleInputPassword1">*@
+    @Html.EditorFor(m=>m.age, new { htmlAttributes = new {@class = "form-control" } })
+       
+    @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
+ 
+</div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Gender</label>
+
+      <select class="form-control" name="gender" asp-items="Html.GetEnumSelectList<Gender>()">  
+             </select>
+         @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
+
+  </div>
+    <div class="mb-3">
+   
+    <input type="hidden" value="nan" name="passport" class="form-control" id="exampleInputPassword1">
+  
+</div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+
+                <input name="Password" type="password" class="form-control" autocomplete="new-password" aria-required="true" />
+         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                
+              
+            </div>
+            <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+
+                <input name="ConfirmPassword" type="password" class="form-control" autocomplete="new-password" aria-required="true" />
+                
+         @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+             
+            </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

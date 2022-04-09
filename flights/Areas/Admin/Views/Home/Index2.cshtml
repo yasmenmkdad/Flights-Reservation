@@ -1,0 +1,230 @@
+﻿@model IEnumerable< flights.Entity.country>
+@using flights.Context;
+@{
+    Layout = "~/Areas/Admin/Views/shared/_LayoutAdmin.cshtml";
+}
+
+             
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Dashboard</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row column1">
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-user yellow_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no"> @ViewBag.count</p>
+                                    <p class="head_couter">Visitors</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-plane blue1_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">  @ViewBag.flightscount</p>
+                                    <p class="head_couter">Number of flights</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-user green_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.usercount</p>
+                                    <p class="head_couter">number of passenger</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                      
+                     </div>
+                     <div class="row column1 social_media_section">
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full socile_icons fb margin_bottom_30">
+                              <div class="social_icon">
+                                 <i class="fa fa-facebook"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>35k</strong></span>
+                                       <span>Friends</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>128</strong></span>
+                                       <span>Feeds</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full socile_icons tw margin_bottom_30">
+                              <div class="social_icon">
+                                 <i class="fa fa-twitter"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>584k</strong></span>
+                                       <span>Followers</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>978</strong></span>
+                                       <span>Tweets</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                           <div class="full socile_icons linked margin_bottom_30">
+                              <div class="social_icon">
+                                 <i class="fa fa-linkedin"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>758+</strong></span>
+                                       <span>Contacts</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>365</strong></span>
+                                       <span>Feeds</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                 
+                     <div class="row column3">
+                        <!-- testimonial -->
+                        <div class="col-md-6">
+                           <div class="dark_bg full margin_bottom_30">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Testimonial</h2>
+                                 </div>
+                              </div>
+                              <div class="full graph_revenue">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="content testimonial">
+                                          <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                                             <!-- Wrapper for carousel items -->
+                                             <div class="carousel-inner">
+                                              @{
+                                                  var flag=0;
+                                              
+                                        foreach(var item in Model){
+                                        if (flag == 0)
+                                        {
+                                            <div class="item carousel-item active">
+                                                <div class="img-box">
+                                                    <img src="data:image/bmp;base64, @(Convert.ToBase64String(item.Image))" 
+												alt="" width = "200" height="240"/></div>
+                                           <p class="testimonial">@item.description</p>
+                                                   <p class="overview"><b>@item.Name</b></p>
+                                            </div>
+                                            flag++;
+                                        }
+                                        else
+                                        {
+                                            <div class="item carousel-item">
+                                                <div class="img-box">
+                                                       	<img src="data:image/bmp;base64, @(Convert.ToBase64String(item.Image))" 
+												alt="" width = "200" height="240"/></div>
+                                                   <p class="testimonial">@item.description</p>
+                                                   <p class="overview"><b>@item.Name</b></p>
+                                                </div>}
+                                                }}
+                                               
+                                             </div>
+                                             <!-- Carousel controls -->
+                                             <a class="carousel-control left carousel-control-prev" href="#testimonial_slider" data-slide="prev">
+                                             <i class="fa fa-angle-left"></i>
+                                             </a>
+                                             <a class="carousel-control right carousel-control-next" href="#testimonial_slider" data-slide="next">
+                                             <i class="fa fa-angle-right"></i>
+                                             </a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end testimonial -->
+                        <!-- progress bar -->
+                        <div class="col-md-6">
+                           <div class="white_shd full margin_bottom_30">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Progress Bar</h2>
+                                 </div>
+                              </div>
+                              <div class="full progress_bar_inner">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="progress_bar">
+                                          <!-- Skill Bars -->
+                                          @foreach( var item in Model){
+                                
+                                    FlightsystemdbContext context = new FlightsystemdbContext();
+                                  float perofcountry=  context.flights.Where(w => w.To == item.Name).Count();
+                                  float all=  context.flights.Count();
+
+                                  float per=(perofcountry / all)*100;
+
+                                
+                                <span class="skill" style="width:73%;"> @item.Name  <span class="info_valume"></span>@per</span>
+
+                                <div class="progress skill-bar ">
+                                             <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@per" aria-valuemin="0" aria-valuemax="100" style="width: @per%;">
+                                             </div>
+                                          </div>
+                                         
+                                      }
+                                         
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end progress bar -->
+                   
+                  <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer">
+                        <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                           Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+           
