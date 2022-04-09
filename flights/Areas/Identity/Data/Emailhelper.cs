@@ -37,7 +37,7 @@ namespace flights.Areas.Identity.Data
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("flightsiti@gmail.com");
             mailMessage.To.Add(new MailAddress(userEmail));
-           bool tf= ValidateMXRecord(userEmail);
+            bool tf= ValidateMXRecord(userEmail);
             mailMessage.Subject = subject;
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = body;

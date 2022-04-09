@@ -176,7 +176,7 @@
 						TimeSpan FlightTime = ArrTime.Subtract(drpTime);
 						FlightsystemdbContext context1 = new FlightsystemdbContext();
 						var country = context1.countries.Where(w => w.Name == item.To).FirstOrDefault();
-						<div class="pricing-grid grid-one" style="margin-left:20px">
+						<div class="pricing-grid grid-one" style="margin-left:20px;margin-top:20px">
 
 							<div class="w3ls-top">
 								<img src="data:image/bmp;base64, @(Convert.ToBase64String(country.Image))" 

@@ -10230,24 +10230,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dream\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\iti\\crossmobile\\asp.net\\project\\new\\flights\\flights\\flights.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\New folder\\flights\\Flights Reservation\\flights\\flights.csproj",
       "projectName": "flights",
-      "projectPath": "D:\\iti\\crossmobile\\asp.net\\project\\new\\flights\\flights\\flights.csproj",
-      "packagesPath": "C:\\Users\\dream\\.nuget\\packages\\",
-      "outputPath": "D:\\iti\\crossmobile\\asp.net\\project\\new\\flights\\flights\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Desktop\\New folder\\flights\\Flights Reservation\\flights\\flights.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\New folder\\flights\\Flights Reservation\\flights\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dream\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

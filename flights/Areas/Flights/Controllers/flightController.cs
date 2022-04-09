@@ -170,7 +170,7 @@ namespace flights.Areas.Flights.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult Gallery()
+        public IActionResult ShowCountries()
         {
 
             ViewBag.countries = countryRepoService.GetAll();

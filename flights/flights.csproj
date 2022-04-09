@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Content Remove="Areas\Admin\Views\Index.cshtml" />
-    <Content Remove="Areas\Flights\Views\flight\show11.cshtml" />
     <Content Remove="wwwroot\css\animate.css" />
     <Content Remove="wwwroot\css\baguetteBox.min.css" />
     <Content Remove="wwwroot\css\bootstrap-grid.css" />
@@ -98,7 +97,6 @@
 
   <ItemGroup>
     <None Include="Areas\Admin\Views\Home\Index1.cshtml" />
-    <None Include="Areas\Flights\Views\flight\show11.cshtml" />
     <None Include="wwwroot\css\animate.css" />
     <None Include="wwwroot\css\baguetteBox.min.css" />
     <None Include="wwwroot\css\bootstrap-grid.css" />

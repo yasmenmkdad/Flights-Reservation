@@ -110,7 +110,7 @@ namespace flights.Areas.Flights.Controllers
                         //This is an example of what to do after a charge is successful
                         /*charge.Metadata.TryGetValue("Product", out string Product);
                         charge.Metadata.TryGetValue("Quantity", out string Quantity);*/
-                        return View("Gallery");
+                        return View("Countries");
                             //Database.ReduceStock(Product, Quantity);
                             break;
                         case "failed":
